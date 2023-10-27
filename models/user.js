@@ -14,20 +14,13 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   User.init({
-    userName:DataTypes.STRING,
-    firstName: DataTypes.STRING,
-      lastName: DataTypes.STRING,
-      email: DataTypes.STRING,
-      phone: DataTypes.STRING,
-      contactId: DataTypes.STRING,
-      password: DataTypes.STRING,
-      customerId: DataTypes.STRING,
-      currentRegion:DataTypes.INTEGER,
-      role: DataTypes.ENUM("gust", "admin", "super"),
-      plan: DataTypes.ENUM("free", "paid", "gust", "trial"),
-      email_verified: DataTypes.ENUM("0", "1"),
-      phone_verified: DataTypes.ENUM("0", "1"),
-      type:DataTypes.STRING,
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true
+    },
+    name: DataTypes.STRING,
+    email: DataTypes.STRING,
+    password: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'User',

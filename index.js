@@ -1,10 +1,12 @@
 const express = require("express");
 const dotenv = require("dotenv").config();
-const appRoute = require("./routes");
 const swaggerUi = require("swagger-ui-express");
 const swaggerDocument = require("./swagger.json");
 const swaggerJsdoc = require("swagger-jsdoc");
 const role = require("./role")
+const auth = require('./auth')
+const community = require('./community')
+const member = require('./member')
 const app = express();
 
 
@@ -19,14 +21,15 @@ app.use(cors (
 // app.use(`${process.env.NginxRoute}`, appRoute);
 // app.use("/",role)
 app.use("/v1/role",role)
+app.use('/v1/auth',auth)
+app.use('/v1/community',community)
+app.use('/v1/member',member)
 app.use((_req, res, next) => {
   res.header('Access-Control-Allow-Origin',`${process.env.React_ORIGIN}`);
   res.header('Access-Control-Allow-Headers', '*');
 
   next();
 });
-
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.listen(
   process.env.PORT,

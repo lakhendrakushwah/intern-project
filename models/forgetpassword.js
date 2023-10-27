@@ -14,10 +14,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   forgetPassword.init({
-    id:{
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true
-  },
+    },
     name: DataTypes.STRING,
   }, {
     sequelize,

@@ -14,17 +14,13 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   marketPlace.init({
-    name: DataTypes.STRING,
-    provide: DataTypes.STRING,
-    type1: DataTypes.STRING,
-    type2: DataTypes.JSON,
-    logoLink: DataTypes.STRING,
-    info: DataTypes.STRING,
-    metaData: DataTypes.JSON,
-    feature: DataTypes.JSON,
-    planInterval:DataTypes.ENUM('free','paid','gust','trial','monthly','yearly','oneTime','biannual','quarterly','lifeTime','prepaid','postpaid'),
-    deletedAt: DataTypes.DATE,
-    relativePercentage: DataTypes.INTEGER
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true
+    },
+    community:DataTypes.INTEGER,
+    user:DataTypes.INTEGER,
+    role:DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'marketPlace',

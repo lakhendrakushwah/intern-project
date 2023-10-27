@@ -1,6 +1,6 @@
 'use strict';
 const {
-  Model
+  Model, INTEGER
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class add_new_form extends Model {
@@ -14,11 +14,13 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   add_new_form.init({
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true
+    },
     name: DataTypes.STRING,
-    link: DataTypes.STRING,
-    requestEmail: DataTypes.STRING,
-    metaData: DataTypes.JSON,
-    username: DataTypes.STRING
+    slug: DataTypes.STRING,
+    owner: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'add_new_form',
