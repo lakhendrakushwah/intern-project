@@ -1,0 +1,32 @@
+[
+    {
+        "code": 200,
+        "msg": "working fine",
+        "fileName":"",
+        "error":"No",
+        "unique":5000,
+        "other":""
+    },
+    {
+        "code": "5101",
+        "msg": "something wrong while updating",
+        "fileName":"",
+        "error":"No",
+        "other":""
+    },
+    {
+        "code": "5102",
+        "msg": "something went wrong while logout please try again!",
+        "fileName":"",
+        "error":"No",
+        "other":""
+    },
+    {
+        "code": "rere",
+        "msg": "something went wrong while logout please try again!",
+        "fileName":"",
+        "error":"No",
+        "other":""
+    }
+
+]

@@ -1,0 +1,114 @@
+{
+  "swagger": "2.0",
+  "basePath": "/admin",
+  "info": {
+    "title": "xCampaign",
+    "description": "",
+    "version": "1.0"
+  },
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/check": {
+      "get": {
+        "x-swagger-router-controller": "home",
+        "operationId": "index1",
+        "tags": [
+          "Check Route"
+        ],
+        "description": "[Login 123](https://www.google.com)",
+        "responses": {}
+      }
+    },
+    "/add-saas": {
+      "post": {
+        "x-swagger-router-controller": "add-saas",
+        "operationId": "index1",
+        "tags": [
+          "Saas Related Apis"
+        ],
+        "description": "This is form to add saas application",
+        "parameters": [
+          {
+            "name": "title",
+            "in": "formData",
+            "type": "string",
+            "required": "true",
+            "description": "Name of Saas/MarketPlace to create"
+          },
+          {
+            "name": "info",
+            "in": "formData",
+            "type": "string",
+            "required": "true",
+            "description": "Info/Description of Saas/MarketPlace to create"
+          },
+          {
+            "name": "logoLink",
+            "in": "formData",
+            "type": "string",
+            "required": "true",
+            "description": "Link to logo of Saas/MarketPlace to create"
+          },
+          {
+            "name": "tags",
+            "in": "formData",
+            "type": "string",
+            "required": "true",
+            "description": "Tags of Saas/MarketPlace to create"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/update-saas": {
+      "post": {
+        "x-swagger-router-controller": "update-saas",
+        "operationId": "index2",
+        "tags": [
+          "Saas Related Apis"
+        ],
+        "description": "This is form to add saas application",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "formData",
+            "type": "string",
+            "required": "true",
+            "description": "Id of Saas/MarketPlace to update"
+          },
+          {
+            "name": "name",
+            "in": "formData",
+            "type": "string",
+            "required": "true",
+            "description": "Name of Saas/MarketPlace to update"
+          },
+          {
+            "name": "logoLink",
+            "in": "formData",
+            "type": "string",
+            "required": "true",
+            "description": "Link to logo of Saas/MarketPlace to update"
+          },
+          {
+            "name": "type2",
+            "in": "formData",
+            "type": "string",
+            "required": "true",
+            "description": "Tags of Saas/MarketPlace to update"
+          },
+          {
+            "name": "info",
+            "in": "formData",
+            "type": "string",
+            "required": "true",
+            "description": "Info/Description of Saas/MarketPlace to update"
+          }
+        ],
+        "responses": {}
+      }
+    }
+  }
+}
