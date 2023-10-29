@@ -24,6 +24,7 @@ app.use("/v1/role",role)
 app.use('/v1/auth',auth)
 app.use('/v1/community',community)
 app.use('/v1/member',member)
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use((_req, res, next) => {
   res.header('Access-Control-Allow-Origin',`${process.env.React_ORIGIN}`);
   res.header('Access-Control-Allow-Headers', '*');
